@@ -1,12 +1,10 @@
-const dotenv = require('dotenv')
-
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const https = require('https')
 const mongoose = require('mongoose')
 const path = require('path')
 
-dotenv.config()
 // Mongoose connection
 
 let isConnected = false // to track connections
@@ -21,12 +19,9 @@ const connectToDB = async () => {
 
 	try {
 		// await mongoose.connect(process.env.MONGODB_URI, {
-		await mongoose.connect(
-			'mongodb+srv://portfolio:mongodb_portfolio@cluster0.rogde37.mongodb.net/?retryWrites=true&w=majority',
-			{
-				dbName: 'JF-Portfolio',
-			},
-		)
+		await mongoose.connect(process.env.MONGODB_URI, {
+			dbName: 'portfolioDB',
+		})
 
 		isConnected = true
 
@@ -52,7 +47,7 @@ const Message = mongoose.model('Message', messageSchema)
 
 const app = express()
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, '../client/public')))
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
