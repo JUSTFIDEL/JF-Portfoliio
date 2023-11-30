@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   list-style: none;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 :root {
@@ -44,21 +45,6 @@ body {
   font-size: 1.1rem;
   color: var(--color-white);
   transition: all 0.4s ease-in-out;
-}
-
-.toast-container {
-  position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  z-index: 100;
-}
-
-.toast {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5em 1em;
-  background: rgb(230, 104, 20);
-  animation: toastIt 1000ms cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
 }
 
 @keyframes toastIt {
@@ -223,6 +209,14 @@ section {
   font-size: 1.4rem;
   color: var(--color-grey2);
   pointer-events: none;
+}
+
+.alert {
+  max-width: fit-content;
+}
+
+.hide {
+  display: none;
 }
 
 /*  Header contents*/

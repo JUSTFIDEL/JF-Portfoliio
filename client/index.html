@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.ico">
     <title>JF-Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    </head>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="/css/styles.css">    
+
+</head>
    
     
 <body class="main-content">
     
     <div class="trans-bg"></div>
+
+          
+    
     <header class="section sec1 header active" id="home">
+
+        <!-- Trans Background -->
         <div class="trans-bg"></div>
+
+        <!-- Header contents -->
         <div class="header-content">
+            
+            <!-- Left header -->
             <div class="left-header">
                 <div class="h-shape"></div>
                 <div class="image">
@@ -37,7 +48,7 @@
                 </p>
                 
                 <div class="btn-container">
-                    <a href="/folder/resume.pdf" class="main-btn" download>
+                    <a href="/folder/Resume.pdf" class="main-btn" download>
                         <span class="btn-text">Download CV</span>
                         <span class="btn-icon"><i class="fa-solid fa-download"></i></span>
                     </a>
@@ -527,6 +538,12 @@ A Well organised person, problem solver and a freelancer with high attention to 
         <section class="section sec5 contact" id="contacts">
         <div class="trans-bg"></div>
             <div class="contact-container">
+                 <!-- Alert div -->
+                 <div id="alertId" class="alert alert-success fade in hide">
+                    <span><strong>Success!</strong> message sent.</span>
+                    <a href="#" class="close_alrt" data-dismiss="alert">&times;</a>
+                </div>
+                
                 <div class="main-title">
                     <h2>Contact <span>Me</span><span class="bg-text">my contact</span></h2>
                 </div>
@@ -594,6 +611,9 @@ A Well organised person, problem solver and a freelancer with high attention to 
                     </div>
                     
                     <div class="right-contact">
+
+                       
+
                         <!--  onsubmit="sendMail(); reset(); return false;"-->
                         <!-- <form id="my-form" class="contact-form" action='mailto:fidenki1429@gmail.com' method="post">  -->
 
@@ -609,7 +629,7 @@ A Well organised person, problem solver and a freelancer with high attention to 
                                 <textarea name="message" id="message" cols="15" rows="8" placeholder="Message here..." required></textarea>
                             </div>
                             <div class="submit-btn">
-                                <input class="button" type="submit" name="submit">
+                                <input id="submit" class="button" type="submit" name="submit">
                             </div>
                         </form>
         
@@ -647,10 +667,14 @@ A Well organised person, problem solver and a freelancer with high attention to 
 
 
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
     <script defer src="/js/index.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
      <script>
         const typed = new Typed('#element', {
           strings: ['FrontEnd Dev.', 'BackEnd Dev.', 'FullStack Dev.'],

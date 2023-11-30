@@ -48,20 +48,22 @@ body {
 	transition: all 0.4s ease-in-out;
 }
 
-.toast-container {
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
-	z-index: 100;
-}
+// .toast-cont {
+// 	position: absolute;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	z-index: 100;
+// 	max-width: 300px;
+// }
 
-.toast {
-	font-size: 1rem;
-	font-weight: bold;
-	padding: 0.5em 1em;
-	background: rgb(230, 104, 20);
-	animation: toastIt 1000ms cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
-}
+// .toast {
+// 	font-size: 1rem;
+// 	font-weight: bold;
+// 	padding: 0.5em 1em;
+// 	background: rgb(230, 104, 20);
+// 	animation: toastIt 1000ms cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+// }
 
 @keyframes toastIt {
 	0%,
@@ -228,6 +230,15 @@ section {
 	font-size: 1.4rem;
 	color: var(--color-grey2);
 	pointer-events: none;
+}
+
+// Alert
+.alert {
+	max-width: fit-content;
+}
+
+.hide {
+	display: none;
 }
 
 /*  Header contents*/
@@ -693,6 +704,7 @@ span#element {
 	padding-bottom: 1rem;
 }
 
+// Contact Section
 .contact-content-con {
 	display: flex;
 	padding-top: 3rem;
@@ -991,6 +1003,7 @@ span#element {
 	scale: 1.05;
 }
 
+// media queries
 @media screen and (max-width: 600px) {
 	body {
 		min-height: 100vh !important;
