@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
-const https = require('https')
+// const https = require('https')
 const mongoose = require('mongoose')
 const path = require('path')
 
@@ -70,11 +70,31 @@ app.post('/send', async (req, res) => {
 	await newMessage
 		.save()
 		.then(() => {
-			// res.status(200).json({ message: 'Success!' })
-			res.statusCode()
-			// res.redirect('/')
+			if (res.statusCode === 200) {
+				// res.sendFile(path.join(__dirname, '../client/success.html'))
+				res.redirect('/success')
+			}
 		})
-		.catch(err => console.log(err))
+		.catch(err => {
+			res.redirect('/failure')
+			console.log(err)
+		})
+})
+
+app.get('/success', (req, res) => {
+	res.sendFile(path.join(__dirname, '../client/success.html'))
+})
+
+app.get('/failure', (req, res) => {
+	res.sendFile(path.join(__dirname, '../client/failure.html'))
+})
+
+app.post('/success', (req, res) => {
+	res.redirect('/')
+})
+
+app.post('/failure', (req, res) => {
+	res.redirect('/')
 })
 
 app.listen(process.env.POST || 3000, () => {
